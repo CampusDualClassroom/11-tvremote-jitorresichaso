@@ -13,40 +13,35 @@ public class TVRemote {
         this.color = color;
     }
 
-    public boolean turnOn() {
-
+    public void turnOn() {
+        this.on = true;
     }
 
-    public boolean turnOff() {
-
+    public void turnOff() {
+        this.on = false;
     }
 
     public void channelUp() {
-
+        this.channel++;
     }
 
     public void channelDown() {
-
-    }
-
-    public void volumeUp() {
-      
-    }
-
-    public void volumeDown() {
-
-    }
-
-    public String getColor() {
-
-    }
-
-    private boolean checkMinValue(int value) {
-        if (value == 0) {
-            return false;
-        } else {
-            return true;
+        if (this.channel > 0) {
+            this.channel--;
         }
     }
 
+    public void volumeUp() {
+        this.volume++;
+    }
+
+    public void volumeDown() {
+        if (this.volume > 0) {
+            this.volume--;
+        }
+    }
+
+    public String getColor() {
+        return this.color;
+    }
 }
